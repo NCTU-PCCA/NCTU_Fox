@@ -33,3 +33,4 @@ void DC(int N, Iter tmp, Iter A, Iter B, Iter res){
         res[i+n] += res[2*N+i];
     }
 }
+// DC(1<<16,tmp.begin(),A.begin(),B.begin(),res.begin());
