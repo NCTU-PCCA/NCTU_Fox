@@ -1,11 +1,15 @@
 // N is power of 2
 template<typename Iter>
 void DC(int N, Iter tmp, Iter A, Iter B, Iter res){
-    if (N==1){
-        res[0] = A[0]*B[0];
+    fill(res,res+2*N,0);
+    if (N<=32){
+        for (int i=0; i<N; i++){
+            for (int j=0; j<N; j++){
+                res[i+j] += A[i]*B[j];
+            }
+        }
         return;
     }
-    fill(res,res+2*N,0);
     int n = N/2;
     auto a = A+n, b = A;
     auto c = B+n, d = B;
