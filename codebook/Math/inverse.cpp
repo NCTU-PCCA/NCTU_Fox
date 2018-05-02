@@ -3,7 +3,7 @@ int inv[MAXN];
 void invTable(int bound, int p){
     inv[1] = 1;
     for (int i=2; i<bound; i++){
-        inv[i] = (long long)inv[i] * (p-p/i) %p;
+        inv[i] = (long long)inv[p%i] * (p-p/i) %p;
     }
 }
 
