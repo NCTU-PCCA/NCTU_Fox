@@ -1,8 +1,30 @@
-set nu ai si cin ts=4 sw=4 sts=4 expandtab
+set et nu cin ls=2 ts=4 sw=4 sts=4
+syntax on
 
-nmap #4 :! date > %<.pt; cat -n % > %<.pt; lpr %<.pt <CR>
-autocmd filetype cpp nmap #9 :! clear ; g++ -std=c++11 -O2 -D AC -o %<.out % ; for i in %<*.in; do echo $i; ./%<.out < $i; echo ""; done <CR>
-autocmd filetype python nmap #9 :! clear ; chmod +x %; for i in %<*.in; do echo $i; ./% < $i; echo ""; done <CR>
-autocmd filetype cpp nmap #0 :! clear ; g++ -std=c++11 -O2 -D AC -o %<.out % ; ./%<.out <CR>
-autocmd filetype python nmap #0 :! clear ; chmod +x %; ./% <CR>
-nmap <C-I> :! read -p "CASE:" CASE; gedit %<_$CASE.in <CR>
+nn <F7> :w <bar> :!~/.script addin %< <CR>
+nn <F8> :w <bar> :!~/.script %:e %< <CR>
+
+#!/bin/bash
+CF="-std=c++11 -fsanitize=undefined -D FOX"
+WF="-Wall -Wextra -Wshadow -pedantic"
+PN=$(echo $2 | awk -v FS=. '{print $1}')
+cpp(){
+    g++ $1.cpp $CF $WF -o $1 && run ./$1
+}
+py(){
+    run "python $1.py"
+}
+addin(){
+    echo -n "case name: "
+    read CASE && vim $PN\_$CASE.in
+}
+run(){
+    for i in $(ls | grep ^$PN\_.\*\\.in\$)
+    do
+        echo "======== $i ========"
+        bash -c "$1" < $i
+    done
+}
+echo "=========================v"
+"$1" "$2"
+echo "=========================^"
