@@ -19,7 +19,7 @@ addin(){
     read CASE && vim $PN\_$CASE.in
 }
 run(){
-    for i in $(ls | grep ^$PN\_.\*\\.in\$)
+    for i in "$PN"_*.in
     do
         echo "======== $i ========"
         bash -c "$1" < $i
