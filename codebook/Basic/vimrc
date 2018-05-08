@@ -7,7 +7,7 @@ nn <F8> :w <bar> :!~/.script %:e %< <CR>
 #!/bin/bash
 CF="-std=c++11 -fsanitize=undefined -D FOX"
 WF="-Wall -Wextra -Wshadow -pedantic"
-PN=$(echo $2 | awk -v FS=. '{print $1}')
+PN=$(echo $2 | sed 's/\..*$//')
 cpp(){
     g++ $1.cpp $CF $WF -o $1 && run ./$1
 }
