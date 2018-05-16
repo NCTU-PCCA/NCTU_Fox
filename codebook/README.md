@@ -1,22 +1,28 @@
-# codebook of team NCTU_Fox
+# Codebook of team NCTU_Fox
 
 - [latest version PDF](https://drive.google.com/open?id=1BE3YoEIVL1873pOpBCTAezFNkn0LsXfo)
 
-## build
-	```bash
-	make
-	```
+## Build
+```bash
+make
+```
 
-## environment
+## Environment
 
 - xelatex
 	```bash
-	sudo apt-get -y install texlive
-	sudo apt-get -y install texlive-full
-	sudo apt-get -y install gedit-latex-plugin
-	sudo apt-get -y install gedit-latex-plugin texlive-fonts-recommended latex-beamer texpower texlive-pictures texlive-latex-extra texpower-examples imagemagick
+	sudo apt-get -y install 	texlive \
+					texlive-full \
+					gedit-latex-plugin \
+					texlive-fonts-recommended \
+					latex-beamer \
+					texpower \
+					texlive-pictures \
+					texlive-latex-extra \
+					texpower-examples \
+					imagemagick
 	```
-- font: Consolas 
+- English font: Consolas 
 	```bash
 	cd ~/Desktop/
 	wget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf
@@ -26,7 +32,7 @@
 	cd /usr/share/fonts/consolas
 	sudo mkfontscale && sudo mkfontdir && sudo fc-cache -fv
 	```
-- chinese font: [思源黑體](https://www.beforafter.org/blog/source-han-sans-font)
+- Chinese font: [思源黑體](https://www.beforafter.org/blog/source-han-sans-font)
 	```bash
 	cd ~/Desktop/
 	wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip
