@@ -1,0 +1,19 @@
+Maximum Independent Set
+General: [NPC] maximum clique of complement of G
+Tree: [P] Greedy
+Bipartite Graph: [P] Maximum Cardinality Bipartite Matching
+-------------------------------------------------------
+Minimum Dominating Set
+General: [NPC]
+Tree: [P] DP
+Bipartite Graph: [NPC]
+-------------------------------------------------------
+Minimum Vertex Cover
+General: [NPC] (?)maximum clique of complement of G 
+Tree: [P] Greedy, from leaf to root
+Bipartite Graph: [P] Maximum Cardinality Bipartite Matching
+-------------------------------------------------------
+Minimum Edge Cover
+General: [P] V - Maximum Matching
+Bipartite Graph: [P] Greedy, strategy: cover small degree node first.
+(Min/Max)Weighted: [P]: Minimum/Minimum Weight Matching
