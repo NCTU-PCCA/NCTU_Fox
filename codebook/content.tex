@@ -1,38 +1,26 @@
 \section{Basic}
 	\subsection{bat}
 		\input{Basic/bat/bat.tex}
-
-\section{Data structure}
-	\subsection{2D range tree}
-		\lstinputlisting{DataStructure/2D_RangeTree.cpp}
-	\subsection{ext heap}
-		\lstinputlisting{DataStructure/ext_heap.cpp}
-	\subsection{KD tree}
-		\lstinputlisting{DataStructure/KDTree.cpp}
-	\subsection{Link-Cut tree}
-		\lstinputlisting{DataStructure/link_cut_tree.cpp}
-%e	\subsection{sparse table}
-%		\lstinputlisting{DataStructure/SparseTable.h}
-%n	\subsection{Treap}
-%		\lstinputlisting{DataStructure/Treap.cpp}
-	\subsection{Treap Lin}
-		\lstinputlisting{DataStructure/Treap_Lin.cpp}
-
-\section{Geometry}
-	\subsection{2D point template}
-		\lstinputlisting{Geometry/2Dpoint.cpp}
-	\subsection{circumcentre}
-		\lstinputlisting{Geometry/circumcentre.cpp}
-	\subsection{ConvexHull}
-		\lstinputlisting{Geometry/ConvexHull.cpp}
-	\subsection{half plane intersection}
-		\lstinputlisting{Geometry/half_plane_intersection.cpp}
-	\subsection{Intersection of two circle}
-		\lstinputlisting{Geometry/Intersection_of_two_circle.cpp}
-	\subsection{Intersection of two lines}
-		\lstinputlisting{Geometry/Intersection_of_two_lines.cpp}
-	\subsection{Smallest Circle}
-		\lstinputlisting{Geometry/Smallest_Circle.cpp}
+	\subsection{state machine}
+		\begin{center}
+		\begin{tikzpicture}[scale=0.2]
+		\tikzstyle{every node}+=[inner sep=0pt]
+		\draw [black] (29.5,-22.7) circle (3);
+		\draw (29.5,-22.7) node { L o L };
+		\draw [black] (29.5,-22.7) circle (2.4);
+		\draw [black] (17.3,-22.7) circle (3);
+		\draw (17.3,-22.7) node {Q \_ Q};
+		\draw [black] (15.977,-20.02) arc (234:-54:2.25);
+		\draw (17.3,-15.45) node [above] {WA,TLE,MLE,RE...};
+		\fill [black] (18.62,-20.02) -- (19.5,-19.67) -- (18.69,-19.08);
+		\draw [black] (8.7,-22.7) -- (14.3,-22.7);
+		\draw (8.2,-22.7) node [left] {start};
+		\fill [black] (14.3,-22.7) -- (13.5,-22.2) -- (13.5,-23.2);
+		\draw [black] (20.3,-22.7) -- (26.5,-22.7);
+		\fill [black] (26.5,-22.7) -- (25.7,-22.2) -- (25.7,-23.2);
+		\draw (23.4,-23.2) node [below] {AC};
+		\end{tikzpicture}
+		\end{center}
 
 \section{Flow}
 	\subsection{Dinic}
@@ -88,6 +76,7 @@
 		\lstinputlisting{Graph/TwoSAT.cpp}
 
 \section{Math}
+		\input{Math/.Math.tex}
 	\subsection{ax+by=gcd(a,b)}
 		\lstinputlisting{Math/ax+by=gcd.cpp}
 %e	\subsection{Bigint}
@@ -117,6 +106,54 @@
 	\subsection{theorem}
 		\lstinputlisting{Math/theorem.cpp}
 
+\section{Geometry}
+	\subsection{2D point template}
+		\lstinputlisting{Geometry/2Dpoint.cpp}
+	\subsection{circumcentre}
+		\lstinputlisting{Geometry/circumcentre.cpp}
+	\subsection{ConvexHull}
+		\lstinputlisting{Geometry/ConvexHull.cpp}
+	\subsection{half plane intersection}
+		\lstinputlisting{Geometry/half_plane_intersection.cpp}
+	\subsection{Intersection of two circle}
+		\lstinputlisting{Geometry/Intersection_of_two_circle.cpp}
+	\subsection{Intersection of two lines}
+		\lstinputlisting{Geometry/Intersection_of_two_lines.cpp}
+	\subsection{Smallest Circle}
+		\lstinputlisting{Geometry/Smallest_Circle.cpp}
+
+\section{String}
+	\subsection{AC automaton}
+		\lstinputlisting{String/AC.cpp}
+	\subsection{KMP}
+		\lstinputlisting{String/KMP.h}
+	\subsection{palindromic tree}
+		\lstinputlisting{String/PalindromicTree.cpp}
+	\subsection{SAM}
+		\lstinputlisting{String/SAM.cpp}
+	\subsection{smallest rotation }
+		\lstinputlisting{String/smallest_rotation.cpp}
+	\subsection{suffix array}
+		\lstinputlisting{String/suffix_array.cpp}
+	\subsection{Z value}
+		\lstinputlisting{String/Z-value.cpp}
+
+\section{Data structure}
+	\subsection{2D range tree}
+		\lstinputlisting{DataStructure/2D_RangeTree.cpp}
+	\subsection{ext heap}
+		\lstinputlisting{DataStructure/ext_heap.cpp}
+	\subsection{KD tree}
+		\lstinputlisting{DataStructure/KDTree.cpp}
+	\subsection{Link-Cut tree}
+		\lstinputlisting{DataStructure/link_cut_tree.cpp}
+%e	\subsection{sparse table}
+%		\lstinputlisting{DataStructure/SparseTable.h}
+%n	\subsection{Treap}
+%		\lstinputlisting{DataStructure/Treap.cpp}
+	\subsection{Treap Lin}
+		\lstinputlisting{DataStructure/Treap_Lin.cpp}
+
 \section{Other}
 	\subsection{count spanning tree}
 		\lstinputlisting{Other/count_spanning_tree.cpp}
@@ -140,19 +177,3 @@
 		\lstinputlisting{Other/Parser.cpp}
 	\subsection{python cheat sheet}
 		\lstinputlisting{Other/python.py}
-
-\section{String}
-	\subsection{AC automaton}
-		\lstinputlisting{String/AC.cpp}
-	\subsection{KMP}
-		\lstinputlisting{String/KMP.h}
-	\subsection{palindromic tree}
-		\lstinputlisting{String/PalindromicTree.cpp}
-	\subsection{SAM}
-		\lstinputlisting{String/SAM.cpp}
-	\subsection{smallest rotation }
-		\lstinputlisting{String/smallest_rotation.cpp}
-	\subsection{suffix array}
-		\lstinputlisting{String/suffix_array.cpp}
-	\subsection{Z value}
-		\lstinputlisting{String/Z-value.cpp}
