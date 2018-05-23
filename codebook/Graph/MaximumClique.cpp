@@ -23,7 +23,7 @@ bool dfs( int *adj, int total, int cnt ){
         for( k = 0, j = i+1; j < total; j++ )
             if( g[ adj[i] ][ adj[j] ] )
                 t[ k++ ] = adj[j];
-                if( dfs( t, k, cnt+1 ) ) return true;
+        if( dfs( t, k, cnt+1 ) ) return true;
     } return false;
 }
 int MaximumClique(){
