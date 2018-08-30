@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# import
+import math
+from math import *
+import math as M
+from math import sqrt
+
 # input
 n = int( input() )
 a = [ int(x) for x in input().split() ]
@@ -57,3 +63,12 @@ queue.append(6) # push()
 queue.popleft() # pop()
 queue[0]        # front()
 len(queue)      # size() O(1)
+
+# random
+from random import *
+randrange(L,R,step) # [L,R) L+k*step
+randint(L,R) # int from [L,R]
+choice(list) # pick 1 item from list
+choices(list,k) # pick k item
+shuffle(list)
+Uniform(L,R) # float from [L,R]
