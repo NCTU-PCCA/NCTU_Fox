@@ -1,6 +1,9 @@
 \section{Basic}
-	\subsection{bat}
-		\input{Basic/bat/bat.tex}
+	\subsection{vimrc}
+		\input{Basic/vimrc/vimrc.tex}
+	\subsection{default code}
+		\lstinputlisting{Basic/T.cpp}
+
 	\subsection{state machine}
 		\begin{center}
 		\begin{tikzpicture}[scale=0.2]
@@ -31,6 +34,9 @@
 %		\lstinputlisting{Graph/Flow/Karzanov.cpp}
 	\subsection{min cost flow}
 		\lstinputlisting{Graph/Flow/Min_Cost_Max_Flow.cpp}
+	\subsection{SW mincut 全點對最小割}
+		\lstinputlisting{Graph/Flow/SW-mincut.cpp}
+
 
 \section{Matching}
 	\subsection{Hungarian}
@@ -57,8 +63,8 @@
 		\lstinputlisting{Graph/Domination.txt}
 %?	\subsection{Dominator tree}
 %		\lstinputlisting{Graph/DominatorTree.cpp}
-	\subsection{Kosaraju SCC}
-		\lstinputlisting{Graph/Kosaraju_SCC.cpp}
+%?	\subsection{Kosaraju SCC}
+%		\lstinputlisting{Graph/Kosaraju_SCC.cpp}
 %e	\subsection{LCA}
 %		\lstinputlisting{Graph/LCA.cpp}
 	\subsection{max clique}
@@ -75,6 +81,9 @@
 		\lstinputlisting{Graph/Tarjan.cpp}
 	\subsection{2-SAT}
 		\lstinputlisting{Graph/TwoSAT.cpp}
+	\subsection{平面圖判定}
+		\lstinputlisting{Graph/planar.cpp}
+
 
 \section{Math}
 		\input{Math/.Math.tex}
@@ -178,3 +187,17 @@
 		\lstinputlisting{Other/Parser.cpp}
 	\subsection{python cheat sheet}
 		\lstinputlisting{Other/python.py}
+		
+\onecolumn
+\newpage
+\centering
+\begin{tikzpicture}[every node/.style={minimum size=1cm-\pgflinewidth, outer sep=100pt}, scale=2]
+    \draw[step=0.2cm,color=gray] (0,0) grid (9,13);
+    \draw[step=1cm,color=black,line width=0.4mm] (0,0) grid (9,13);
+\end{tikzpicture}
+\newpage
+\centering
+\begin{tikzpicture}[every node/.style={minimum size=1cm-\pgflinewidth, outer sep=100pt}, scale=2]
+    \draw[step=0.2cm,color=gray] (0,0) grid (9,13);
+    \draw[step=1cm,color=black,line width=0.4mm] (0,0) grid (9,13);
+\end{tikzpicture}
