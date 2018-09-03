@@ -9,7 +9,7 @@ py(){
     run "python $1.py"
 }
 addin(){
-    read -p "case name: " CASE && vim $PN\_$CASE.in
+    read -p "case name: " CASE && gedit $PN\_$CASE.in
 }
 run(){
     for i in "$PN"_*.in
