@@ -1,5 +1,5 @@
 # NCTU_Fox
-NCTU_Fox, an team for ACM ICPC of Nation Chiao Tung University.
+NCTU_Fox, an team for ACM ICPC of National Chiao Tung University.
 
 ![p1](https://raw.githubusercontent.com/NCTU-PCCA/NCTU_Fox/master/contest/TTCPC2018/photo2.jpg)
 
