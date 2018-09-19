@@ -1,4 +1,4 @@
-set et nu cin ls=2 ts=4 sw=4 sts=4
+set et nu cin ls=2 ts=4 sw=4 sts=4 ttm=100
 syntax on
 
 nn <F4> :w! date > %<.pt; cat -n % > %<.pt; lpr %<.pt <CR>
