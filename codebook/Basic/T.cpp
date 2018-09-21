@@ -11,6 +11,11 @@ void setstack(){
 }
 
 int main(){
+    #ifndef FOX
+    #define name "fox"
+    freopen(name".in","r",stdin);
+    freopen(name".out","w",stdout);
+    #endif
     ios::sync_with_stdio(0);
     cin.tie(0), cout.tie(0);
 }
