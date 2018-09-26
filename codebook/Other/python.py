@@ -89,3 +89,15 @@ def angle(cosT):
   sinT = (1 - cosT * cosT) ** itwo
   return sinT * (2 ** N)
 pi = angle(Decimal(-1))
+
+# file IO
+r = open("filename.in")
+a = r.read() # read whole content into one string
+
+w = open("filename.out", "w")
+w.write('123\n')
+
+# IO redirection
+import sys
+sys.stdin = open('filename.in')
+sys.stdout = open('filename.out', 'w')
