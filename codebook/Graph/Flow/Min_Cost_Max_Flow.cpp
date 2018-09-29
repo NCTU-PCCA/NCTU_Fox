@@ -14,7 +14,7 @@ struct CostFlow {
         for ( int i = 0 ; i < MAXN ; i++) G[i].clear();
     }
     void add_edge(int u, int v, long long rest, long long c) {
-        G[u].push_back({v, (int)G[v].size()  , rest,  c});
+        G[u].push_back({v, (int)G[v].size(), rest, c});
         G[v].push_back({u, (int)G[u].size()-1, 0, -c});
     }
     pll flow(int s, int t) {
