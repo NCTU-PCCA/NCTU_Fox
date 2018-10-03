@@ -45,3 +45,12 @@ int main(){
     }
     else puts("NO");
 }
+
+void warshall(){
+    bitset<2003> d[2003]; 
+    for (int k=0; k<n; k++){
+        for (int i=0; i<n; i++) if (d[i][k]) {
+            d[i] |= d[k];
+        }
+    }
+}
