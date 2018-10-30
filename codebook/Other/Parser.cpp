@@ -47,8 +47,10 @@ struct Parser{
             for (auto& x : Op1s){
                 auto& op = x.first;
                 auto& lev = x.second;
-                if (LEVEL == lev && is.peek() == op)
+                if (LEVEL == lev && is.peek() == op){
                     op1 = is.get();
+                    break;
+                }
             }
             parse(LEVEL+1, x, is);
             if (op1) x = new Node{Node::op1, op1, x, nullptr};
