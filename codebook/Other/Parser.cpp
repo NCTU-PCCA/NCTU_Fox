@@ -50,7 +50,7 @@ template <> void parse<MAXLEVEL>(Node*& x, istream& is){
     if (op1) x = new Node{Node::op1, op1, x, nullptr};
 }
 //  throw when error occur !!!!!
-void build(istream& is) try{
+void build(istream& is){
     parse<0>(root, is);
     if ((is>>ws).peek() != EOF) throw 0;
-} catch(...){ throw; }
+}
