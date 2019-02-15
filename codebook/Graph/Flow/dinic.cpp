@@ -101,8 +101,8 @@ struct Dinic {  //O(VVE), with minimum cut
         return flow;
     }
 
-    long long maxflow(int s, int t){
-        this->s = s, this->t = t;
+    long long maxflow(int _s, int _t){
+        s = _s, t = _t;
         long long flow = 0, mf;
         while ( bfs() ){
             memset(cur, 0, sizeof(cur));
