@@ -8,13 +8,16 @@ struct Point {
 		assert(0 && "choose compare");
 	}
 	Point operator + (const Point &b)const{
-		return (Point){x+b.x,y+b.y};
+		return {x+b.x,y+b.y};
 	}
 	Point operator - (const Point &b)const{
-		return (Point){x-b.x,y-b.y};
+		return {x-b.x,y-b.y};
 	}
 	Point operator * (const Double &d)const{
-		return Point(d*x,d*y);
+		return {d*x,d*y};
+	}
+	Point operator / (const Double &d)const{
+		return {x/d,y/d};
 	}
 	Double operator * (const Point &b)const{
 		return x*b.x + y*b.y;
