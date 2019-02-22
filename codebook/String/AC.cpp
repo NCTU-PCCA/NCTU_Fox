@@ -8,30 +8,27 @@ inline int idx(char c){
     if ('A'<= c && c <= 'Z')return c-'A';
     if ('a'<= c && c <= 'z')return c-'a' + 26;
     if ('0'<= c && c <= '9')return c-'0' + 52;
+    assert(false);
 }
 
 struct ACautomaton{
     struct Node{
         Node *next[sigma], *fail;
         int cnt; // dp
-        Node(){
-            memset(next,0,sizeof(next));
-            fail=0;
-            cnt=0;
-        }
+        Node() : next{}, fail{}, cnt{}{}
     } buf[MAXC], *bufp, *ori, *root;
-    
+
     void init(){
         bufp = buf;
         ori = new (bufp++) Node();
         root = new (bufp++) Node();
     }
 
-    void insert(int n, char *s){
+    void insert(char *s){
         Node *ptr = root;
         for (int i=0; s[i]; i++){
             int c = idx(s[i]);
-            if (ptr->next[c]==NULL)
+            if (!ptr->next[c])
                 ptr->next[c] = new (bufp++) Node();
             ptr = ptr->next[c];
         }
@@ -39,7 +36,7 @@ struct ACautomaton{
     }
 
     Node* trans(Node *o, int c){
-        while (o->next[c]==NULL) o = o->fail;
+        while (!o->next[c]) o = o->fail;
         return o->next[c];
     }
 
@@ -54,7 +51,7 @@ struct ACautomaton{
         while ( que.size() ){
             Node *u = que.front(); que.pop();
             for (int i=0; i<sigma; i++){
-                if (u->next[i]==NULL)continue;
+                if (!u->next[i])continue;
                 u->next[i]->fail = trans(u->fail,i);
                 que.push(u->next[i]);
             }
