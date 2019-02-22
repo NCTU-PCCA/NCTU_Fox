@@ -1,79 +1,81 @@
-const int MAX_N = 400 + 10;
-const ll INF64 = 0x3f3f3f3f3f3f3f3fLL;
-int nl , nr;
-int pre[MAX_N];
-ll slack[MAX_N];
-ll W[MAX_N][MAX_N];
-ll lx[MAX_N] , ly[MAX_N];
-int mx[MAX_N] , my[MAX_N];
-bool vx[MAX_N] , vy[MAX_N];
+const int MAXN = 400 + 10;
+const long long INF64 = 0x3f3f3f3f3f3f3f3fll;
+int nl, nr;
+int pre[MAXN];
+long long slack[MAXN];
+long long W[MAXN][MAXN];
+long long lx[MAXN], ly[MAXN];
+int mx[MAXN], my[MAXN];
+bool vx[MAXN], vy[MAXN];
 void augment(int u) {
     if(!u) return;
     augment(mx[pre[u]]);
     mx[pre[u]] = u;
     my[u] = pre[u];
 }
-inline void match(int x) {
+void match(int x) {
     queue<int> que;
     que.push(x);
     while(1) {
         while(!que.empty()) {
-            x = que.front();
-            que.pop();
+            x = que.front(); que.pop();
             vx[x] = 1;
-            REP1(y , 1 , nr) {
-                if(vy[y]) continue;
-                ll t = lx[x] + ly[y] - W[x][y];
+            for (int i=1; i<=nr; i++) {
+                if(vy[i]) continue;
+                long long t = lx[x] + ly[i] - W[x][i];
                 if(t > 0) {
-                    if(slack[y] >= t) slack[y] = t , pre[y] = x;
+                    if(slack[i] >= t) slack[i] = t, pre[i] = x;
                     continue;
                 }
-                pre[y] = x;
-                if(!my[y]) {
-                    augment(y);
+                pre[i] = x;
+                if(!my[i]) {
+                    augment(i);
                     return;
                 }
-                vy[y] = 1;
-                que.push(my[y]);
+                vy[i] = 1;
+                que.push(my[i]);
             }
         }
-        ll t = INF64;
-        REP1(y , 1 , nr) if(!vy[y]) t = min(t , slack[y]);
-        REP1(x , 1 , nl) if(vx[x]) lx[x] -= t;
-        REP1(y , 1 , nr) {
-            if(vy[y]) ly[y] += t;
-            else slack[y] -= t;
+        long long t = INF64;
+        for (int i=1; i<=nr; i++) if(!vy[i]) t = min(t, slack[i]);
+        for (int i=1; i<=nl; i++) if(vx[i]) lx[i] -= t;
+        for (int i=1; i<=nr; i++) {
+            if(vy[i]) ly[i] += t;
+            else slack[i] -= t;
         }
-        REP1(y , 1 , nr) {
-            if(vy[y] || slack[y]) continue;
-            if(!my[y]) {
-                augment(y);
+        for (int i=1; i<=nr; i++) {
+            if(vy[i] || slack[i]) continue;
+            if(!my[i]) {
+                augment(i);
                 return;
             }
-            vy[y] = 1;
-            que.push(my[y]);
+            vy[i] = 1;
+            que.push(my[i]);
         }
     }
 }
 int main() {
     int m;
-    RI(nl , nr , m);
-    nr = max(nl , nr);
+    cin >> nl >> nr >> m;
+    nr = max(nl, nr);
     while(m--) {
-        int x , y;
-        ll w;
-        RI(x , y , w);
-        W[x][y] = w;
-        lx[x] = max(lx[x] , w);
+        int u, v;
+        long long w;
+        cin >> u >> v >> w;
+        W[u][v] = w;
+        lx[u] = max(lx[u], w);
     }
-    REP1(i , 1 , nl) {
-        REP1(x , 1 , nl) vx[x] = 0;
-        REP1(y , 1 , nr) vy[y] = 0 , slack[y] = INF64;
+    for (int i=1; i<=nl; i++) {
+        for (int x=1; x<=nl; x++) vx[x] = 0;
+        for (int y=1; y<=nr; y++) vy[y] = 0, slack[y] = INF64;
         match(i);
     }
-    ll ans = 0LL;
-    REP1(x , 1 , nl) ans += W[x][mx[x]];
-    PL(ans);
-    REP1(x , 1 , nl) printf("%d%c",W[x][mx[x]] ? mx[x] : 0," \n"[x == nl]);
-    return 0;
+    long long ans = 0;
+    for (int i=1; i<=nl; i++) ans += W[i][mx[i]];
+    cout << ans << '\n';
+    for (int i=1; i<=nl; i++) {
+        if (i > 1) cout << ' ';
+        cout << (W[i][mx[i]] ? mx[i] : 0);
+    }
+    cout << '\n';
 }
