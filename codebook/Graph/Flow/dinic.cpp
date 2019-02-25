@@ -45,7 +45,8 @@ struct Dinic {  //O(VVE), with minimum cut
 
     void init(){
         edges.clear();
-        for ( int i = 0 ; i < MAXN ; i++ ) G[i].clear();
+        for ( int i = 0 ; i < n ; i++ ) G[i].clear();
+        n = 0;
     }
 
     // min cut start
@@ -58,6 +59,10 @@ struct Dinic {  //O(VVE), with minimum cut
     }
     // min cut end
 
+    int add_node(){
+        return n++;
+    }
+
     void add_edge(int u, int v, long long cap){
         edges.push_back( {u, v, cap, cap} );
         edges.push_back( {v, u, 0, 0LL} );
@@ -67,7 +72,7 @@ struct Dinic {  //O(VVE), with minimum cut
     }
     
     bool bfs(){
-        memset(d, -1, sizeof(d));
+        fill(d,d+n,-1);
         queue<int> que;
         que.push(s); d[s]=0;
         while (!que.empty()){
@@ -105,7 +110,7 @@ struct Dinic {  //O(VVE), with minimum cut
         s = _s, t = _t;
         long long flow = 0, mf;
         while ( bfs() ){
-            memset(cur, 0, sizeof(cur));
+            fill(cur,cur+n,0);
             while ( (mf = dfs(s, INF)) ) flow += mf;
         }
         return flow;
