@@ -71,6 +71,29 @@
     stringstyle=\itshape\color{Green4},
 }
 
+%----------------------------------------------------------------------------------------
+%   設定 section 行距
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\let\origsection\section
+\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
+
+\newcommand\nostarsection[1]
+{\sectionprelude\origsection{#1}\sectionpostlude}
+
+\newcommand\starsection[1]
+{\sectionprelude\origsection*{#1}\sectionpostlude}
+
+\newcommand\sectionprelude{%
+  \vspace{-10pt} % 改這個數字
+}
+\newcommand\sectionpostlude{%
+  \vspace{-10pt} % 改這個數字
+}
+\makeatother
+
+% ---------------------------------------------------------------------------------------
 
 \begin{document}
 \pagestyle{fancy}
