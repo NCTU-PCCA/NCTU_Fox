@@ -9,7 +9,7 @@ NCTU_Fox, an team for ACM ICPC of National Chiao Tung University.
 - [吳宗達(cthbst)](https://www.facebook.com/cthbst)
 
 # Award (2018-2019)
-- **參加 ACM-ICPC Wrold Final**
+- **2019 ACM-ICPC Wrold Final 21st Place**
 - [ICPC 台北站](https://icpc.baylor.edu/regionals/finder/Taipei-2018) Rank: 4, Third Place, World Final 晉級順位 2
 - [ICPC 首爾站](https://icpc.baylor.edu/regionals/finder/Seoul-2018) Rank: 12, Eighth Place
 - [NCPC](https://ncpc.ntnu.edu.tw/ncpc2018/) Rank: 13, 佳作

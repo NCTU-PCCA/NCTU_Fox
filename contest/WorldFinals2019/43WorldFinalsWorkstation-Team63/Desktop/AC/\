@@ -1,0 +1,29 @@
+#pragma GCC optimize("Ofast")
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAXN = 500005;
+
+int n, m;
+vector<int> G[MAXN];
+
+
+void init(){
+    cin >> n >> m;
+    for (int i=0; i<m; i++){
+        int u, v;
+        cin >> u >> v;
+        G[u].push_back(v);
+        G[v].push_back(u);
+    }
+}
+
+void solve(){
+}
+
+int main(){
+    cin.tie(0); cin.sync_with_stdio(0);
+
+    init();
+    solve();
+}
