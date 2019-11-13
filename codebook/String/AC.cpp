@@ -36,8 +36,8 @@ struct ACautomaton{
     }
 
     Node* trans(Node *o, int c){
-        while (!o->next[c]) o = o->fail;
-        return o->next[c];
+        if (o->next[c]) return o->next[c];
+        return o->next[c] = trans(o->fail, c);
     }
 
     void make_fail(){
